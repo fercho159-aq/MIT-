@@ -1,0 +1,204 @@
+/* ========================================
+   MIT Medical Tower - Rinoplastia Landing
+   ======================================== */
+
+/* Base */
+*{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',sans-serif;background:#F8FAFB;color:#09253F;overflow-x:hidden}
+.font-display{font-family:'Cormorant Garamond',serif}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#F0FAF9}
+::-webkit-scrollbar-thumb{background:#8DD4D0;border-radius:3px}
+
+/* ========================================
+   Textures & Backgrounds
+   ======================================== */
+.grain::before{
+  content:'';position:absolute;inset:0;opacity:.02;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:1
+}
+
+.hero-mesh{
+  background:
+    radial-gradient(ellipse at 20% 50%,rgba(92,189,184,.08) 0%,transparent 50%),
+    radial-gradient(ellipse at 80% 20%,rgba(44,72,114,.06) 0%,transparent 40%),
+    radial-gradient(ellipse at 60% 80%,rgba(126,206,202,.06) 0%,transparent 50%),
+    linear-gradient(180deg,#F8FAFB 0%,#F0FAF9 100%)
+}
+
+/* ========================================
+   Decorative Elements
+   ======================================== */
+.line-accent{width:60px;height:1px;background:linear-gradient(90deg,transparent,#5CBDB8,transparent)}
+
+.price-tag{
+  background:linear-gradient(135deg,#E4F5F4 0%,#F0FAF9 100%);
+  border:2px solid #5CBDB8
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+.btn-whatsapp{
+  background:linear-gradient(135deg,#25D366 0%,#20BA5C 100%);
+  transition:all .4s ease
+}
+.btn-whatsapp:hover{
+  transform:translateY(-1px);
+  box-shadow:0 8px 30px rgba(37,211,102,.35)
+}
+
+.btn-cta{
+  background:linear-gradient(135deg,#2C4872 0%,#3B6B9A 50%,#2C4872 100%);
+  background-size:200% 200%;
+  transition:all .4s ease
+}
+.btn-cta:hover{
+  background-position:100% 100%;
+  transform:translateY(-1px);
+  box-shadow:0 8px 30px rgba(44,72,114,.3)
+}
+
+.btn-teal{
+  background:linear-gradient(135deg,#5CBDB8 0%,#3FA8A3 100%);
+  transition:all .4s ease
+}
+.btn-teal:hover{
+  transform:translateY(-1px);
+  box-shadow:0 8px 30px rgba(92,189,184,.35)
+}
+
+/* ========================================
+   Form
+   ======================================== */
+.form-input:focus{
+  outline:none;
+  border-color:#5CBDB8;
+  box-shadow:0 0 0 3px rgba(92,189,184,.15)
+}
+
+/* ========================================
+   Header
+   ======================================== */
+.header-scrolled{
+  background:rgba(248,250,251,.95);
+  backdrop-filter:blur(12px);
+  box-shadow:0 1px 20px rgba(9,37,63,.06)
+}
+
+/* ========================================
+   FAQ Accordion
+   ======================================== */
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .4s cubic-bezier(.4,0,.2,1)
+}
+.faq-answer.open{max-height:300px}
+.faq-icon{transition:transform .3s ease}
+.faq-icon.rotated{transform:rotate(45deg)}
+
+/* ========================================
+   Cards & Interactive
+   ======================================== */
+.testimonial-card{transition:transform .3s ease,box-shadow .3s ease}
+.testimonial-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(44,72,114,.08)}
+
+.tiktok-card{transition:transform .3s ease,box-shadow .3s ease;overflow:hidden}
+.tiktok-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(44,72,114,.1)}
+
+.benefit-card{transition:all .5s ease}
+.benefit-card:hover{border-color:rgba(92,189,184,.4);box-shadow:0 8px 40px rgba(92,189,184,.1)}
+.benefit-card:hover .benefit-icon{transform:scale(1.1)}
+.benefit-icon{transition:transform .5s ease}
+
+.star{color:#5CBDB8}
+
+/* ========================================
+   Floating WhatsApp
+   ======================================== */
+.whatsapp-float{animation:pulse-wa 2s infinite}
+@keyframes pulse-wa{
+  0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.3)}
+  50%{box-shadow:0 4px 35px rgba(37,211,102,.55)}
+}
+
+/* ========================================
+   Scroll Reveal Animations
+   ======================================== */
+.reveal{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+.stagger>.reveal:nth-child(1){transition-delay:0ms}
+.stagger>.reveal:nth-child(2){transition-delay:120ms}
+.stagger>.reveal:nth-child(3){transition-delay:240ms}
+.stagger>.reveal:nth-child(4){transition-delay:360ms}
+
+/* ========================================
+   Scroll Indicator
+   ======================================== */
+@keyframes scroll-hint{
+  0%,100%{transform:translateY(0);opacity:.6}
+  50%{transform:translateY(6px);opacity:1}
+}
+.scroll-indicator{animation:scroll-hint 2s ease-in-out infinite}
+
+/* ========================================
+   Process Timeline
+   ======================================== */
+.process-step{position:relative}
+.process-step::after{
+  content:'';
+  position:absolute;
+  top:2rem;
+  right:-50%;
+  width:100%;
+  height:1px;
+  background:linear-gradient(90deg,#5CBDB8,transparent);
+  display:none
+}
+@media(min-width:1024px){
+  .process-step:not(:last-child)::after{display:block}
+}
+
+/* ========================================
+   Navigation
+   ======================================== */
+.nav-link{
+  position:relative;
+  transition:color .3s ease
+}
+.nav-link::after{
+  content:'';
+  position:absolute;
+  bottom:-2px;
+  left:0;
+  width:0;
+  height:1px;
+  background:#5CBDB8;
+  transition:width .3s ease
+}
+.nav-link:hover::after,
+.nav-link.active::after{
+  width:100%
+}
+.nav-link:hover,
+.nav-link.active{
+  color:#5CBDB8
+}
+
+.mobile-menu{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .4s cubic-bezier(.4,0,.2,1)
+}
+.mobile-menu.open{
+  max-height:400px
+}
