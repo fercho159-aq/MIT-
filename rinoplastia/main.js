@@ -55,6 +55,112 @@ function toggleFaq(btn) {
 }
 
 
+// ============ BEFORE & AFTER CAROUSEL ============
+(function() {
+  const track = document.getElementById('carouselTrack');
+  const dotsContainer = document.getElementById('carouselDots');
+  if (!track || !dotsContainer) return;
+
+  const slides = track.querySelectorAll('.carousel-slide');
+  const totalSlides = slides.length;
+  let currentIndex = 0;
+  let slidesPerView = 3;
+  let autoplayTimer;
+
+  function getSlidesPerView() {
+    if (window.innerWidth < 640) return 1;
+    if (window.innerWidth < 1024) return 2;
+    return 3;
+  }
+
+  function getMaxIndex() {
+    return Math.max(0, totalSlides - slidesPerView);
+  }
+
+  function updateCarousel() {
+    const slideWidth = 100 / slidesPerView;
+    track.style.transform = 'translateX(-' + (currentIndex * slideWidth) + '%)';
+    updateDots();
+  }
+
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    const maxIdx = getMaxIndex();
+    const totalDots = maxIdx + 1;
+    for (let i = 0; i < totalDots; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === currentIndex ? ' active' : '');
+      dot.setAttribute('aria-label', 'Ir a imagen ' + (i + 1));
+      dot.addEventListener('click', function() {
+        currentIndex = i;
+        updateCarousel();
+        resetAutoplay();
+      });
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+    dots.forEach(function(dot, i) {
+      dot.classList.toggle('active', i === currentIndex);
+    });
+  }
+
+  window.moveCarousel = function(direction) {
+    const maxIdx = getMaxIndex();
+    currentIndex += direction;
+    if (currentIndex < 0) currentIndex = maxIdx;
+    if (currentIndex > maxIdx) currentIndex = 0;
+    updateCarousel();
+    resetAutoplay();
+  };
+
+  function startAutoplay() {
+    autoplayTimer = setInterval(function() {
+      const maxIdx = getMaxIndex();
+      currentIndex = currentIndex >= maxIdx ? 0 : currentIndex + 1;
+      updateCarousel();
+    }, 4000);
+  }
+
+  function resetAutoplay() {
+    clearInterval(autoplayTimer);
+    startAutoplay();
+  }
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  let touchEndX = 0;
+  track.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  track.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) {
+      moveCarousel(diff > 0 ? 1 : -1);
+    }
+  }, { passive: true });
+
+  function init() {
+    slidesPerView = getSlidesPerView();
+    if (currentIndex > getMaxIndex()) currentIndex = getMaxIndex();
+    buildDots();
+    updateCarousel();
+  }
+
+  init();
+  startAutoplay();
+  window.addEventListener('resize', function() {
+    slidesPerView = getSlidesPerView();
+    if (currentIndex > getMaxIndex()) currentIndex = getMaxIndex();
+    buildDots();
+    updateCarousel();
+  });
+})();
+
+
 // ============ FORM SUBMISSION → WHATSAPP ============
 function handleSubmit(e) {
   e.preventDefault();

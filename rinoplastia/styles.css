@@ -202,3 +202,22 @@ body{font-family:'Outfit',sans-serif;background:#F8FAFB;color:#09253F;overflow-x
 .mobile-menu.open{
   max-height:400px
 }
+
+/* ========================================
+   Before & After Carousel
+   ======================================== */
+#galleryCarousel{
+  -webkit-overflow-scrolling:touch;
+}
+.carousel-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:#CBD5E0;
+  transition:all .3s ease;
+  cursor:pointer;
+  border:none;padding:0;
+}
+.carousel-dot.active{
+  background:#5CBDB8;
+  width:24px;
+  border-radius:4px;
+}
