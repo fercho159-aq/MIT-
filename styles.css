@@ -131,7 +131,8 @@ body{font-family:'Outfit',sans-serif;background:#F8FAFB;color:#09253F;overflow-x
   background:linear-gradient(90deg,#5CBDB8,#3FA8A3);
   transform:scaleX(0);
   transform-origin:left;
-  transition:transform .5s cubic-bezier(.4,0,.2,1)
+  transition:transform .5s cubic-bezier(.4,0,.2,1);
+  z-index:2
 }
 .procedure-card:hover::before{
   transform:scaleX(1)
@@ -149,6 +150,13 @@ body{font-family:'Outfit',sans-serif;background:#F8FAFB;color:#09253F;overflow-x
 }
 .procedure-icon{transition:transform .5s ease}
 .procedure-arrow{transition:transform .3s ease}
+
+/* Hero image frame float animation */
+.hero-image-frame{animation:hero-float 6s ease-in-out infinite}
+@keyframes hero-float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
 
 /* ========================================
    Cards & Interactive
