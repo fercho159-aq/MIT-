@@ -148,9 +148,13 @@
 
             <div class="relative">
               <h2 class="font-display text-2xl sm:text-3xl font-semibold text-mit-navy-dark mb-2">
-                Agenda Tu Valoración <span class="italic font-light text-mit-navy">Gratuita</span>
+                Agenda Tu <span class="italic font-light text-mit-navy">Valoración</span>
               </h2>
-              <p class="text-slate-400 text-sm mb-6">Envíanos tus datos y te contactamos por <strong class="text-[#25D366]">WhatsApp</strong> en menos de 2 horas.</p>
+              <p class="text-slate-400 text-sm mb-4">Envíanos tus datos y te contactamos por <strong class="text-[#25D366]">WhatsApp</strong> en menos de 2 horas.</p>
+              <div class="flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-xl px-4 py-2.5 mb-6">
+                <svg class="w-4 h-4 text-amber-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                <span class="text-xs text-amber-700 font-medium">La valoración tiene un costo. Consulta precio al agendar.</span>
+              </div>
 
               <form id="leadForm" class="space-y-4" onsubmit="handleSubmit(event)">
                 <div>
@@ -228,14 +232,144 @@
   </section>
 
 
-  <!-- ============ GALERIA VISUAL ============ -->
-  <section class="py-16 md:py-20 bg-white overflow-hidden">
+  <!-- ============ ANTES Y DESPUES ============ -->
+  <section class="py-16 md:py-24 bg-slate-50 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <span class="text-xs font-medium tracking-[0.25em] uppercase text-mit-teal">Resultados Reales</span>
+        <div class="line-accent mx-auto my-4"></div>
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-mit-navy-dark leading-tight">
+          Antes y <span class="italic font-light text-mit-navy">Después</span>
+        </h2>
+        <p class="text-slate-400 font-light mt-4 max-w-xl mx-auto">Resultados reales de nuestros pacientes. Cada rinoplastia es personalizada para lograr armonía facial natural.</p>
+      </div>
+
+      <div class="reveal relative">
+        <!-- Carousel Navigation Arrows -->
+        <button onclick="moveCarousel(-1)" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-colors -translate-x-1/2 md:-translate-x-4">
+          <svg class="w-5 h-5 text-mit-navy-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button onclick="moveCarousel(1)" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-colors translate-x-1/2 md:translate-x-4">
+          <svg class="w-5 h-5 text-mit-navy-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+
+        <!-- Carousel Track -->
+        <div id="galleryCarousel" class="overflow-hidden rounded-2xl mx-4 md:mx-8">
+          <div id="carouselTrack" class="flex transition-transform duration-500 ease-in-out">
+            <div class="carousel-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
+              <div class="rounded-xl overflow-hidden shadow-md"><img src="images/1.png" alt="Rinoplastia antes y después - Caso 1" class="w-full h-auto object-cover" loading="lazy"></div>
+            </div>
+            <div class="carousel-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
+              <div class="rounded-xl overflow-hidden shadow-md"><img src="images/2.png" alt="Rinoplastia antes y después - Caso 2" class="w-full h-auto object-cover" loading="lazy"></div>
+            </div>
+            <div class="carousel-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
+              <div class="rounded-xl overflow-hidden shadow-md"><img src="images/3.png" alt="Rinoplastia antes y después - Caso 3" class="w-full h-auto object-cover" loading="lazy"></div>
+            </div>
+            <div class="carousel-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
+              <div class="rounded-xl overflow-hidden shadow-md"><img src="images/4.png" alt="Rinoplastia antes y después - Caso 4" class="w-full h-auto object-cover" loading="lazy"></div>
+            </div>
+            <div class="carousel-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
+              <div class="rounded-xl overflow-hidden shadow-md"><img src="images/5.png" alt="Rinoplastia antes y después - Caso 5" class="w-full h-auto object-cover" loading="lazy"></div>
+            </div>
+            <div class="carousel-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
+              <div class="rounded-xl overflow-hidden shadow-md"><img src="images/6.png" alt="Rinoplastia antes y después - Caso 6" class="w-full h-auto object-cover" loading="lazy"></div>
+            </div>
+            <div class="carousel-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
+              <div class="rounded-xl overflow-hidden shadow-md"><img src="images/7.png" alt="Rinoplastia antes y después - Caso 7" class="w-full h-auto object-cover" loading="lazy"></div>
+            </div>
+            <div class="carousel-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
+              <div class="rounded-xl overflow-hidden shadow-md"><img src="images/8.png" alt="Rinoplastia antes y después - Caso 8" class="w-full h-auto object-cover" loading="lazy"></div>
+            </div>
+            <div class="carousel-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
+              <div class="rounded-xl overflow-hidden shadow-md"><img src="images/9.png" alt="Rinoplastia antes y después - Caso 9" class="w-full h-auto object-cover" loading="lazy"></div>
+            </div>
+            <div class="carousel-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
+              <div class="rounded-xl overflow-hidden shadow-md"><img src="images/10.png" alt="Rinoplastia antes y después - Caso 10" class="w-full h-auto object-cover" loading="lazy"></div>
+            </div>
+            <div class="carousel-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
+              <div class="rounded-xl overflow-hidden shadow-md"><img src="images/11.png" alt="Rinoplastia antes y después - Caso 11" class="w-full h-auto object-cover" loading="lazy"></div>
+            </div>
+            <div class="carousel-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
+              <div class="rounded-xl overflow-hidden shadow-md"><img src="images/12.png" alt="Rinoplastia antes y después - Caso 12" class="w-full h-auto object-cover" loading="lazy"></div>
+            </div>
+            <div class="carousel-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
+              <div class="rounded-xl overflow-hidden shadow-md"><img src="images/13.png" alt="Rinoplastia antes y después - Caso 13" class="w-full h-auto object-cover" loading="lazy"></div>
+            </div>
+            <div class="carousel-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
+              <div class="rounded-xl overflow-hidden shadow-md"><img src="images/14.png" alt="Rinoplastia antes y después - Caso 14" class="w-full h-auto object-cover" loading="lazy"></div>
+            </div>
+            <div class="carousel-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
+              <div class="rounded-xl overflow-hidden shadow-md"><img src="images/15.png" alt="Rinoplastia antes y después - Caso 15" class="w-full h-auto object-cover" loading="lazy"></div>
+            </div>
+            <div class="carousel-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
+              <div class="rounded-xl overflow-hidden shadow-md"><img src="images/16.png" alt="Rinoplastia antes y después - Caso 16" class="w-full h-auto object-cover" loading="lazy"></div>
+            </div>
+            <div class="carousel-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
+              <div class="rounded-xl overflow-hidden shadow-md"><img src="images/17.png" alt="Rinoplastia antes y después - Caso 17" class="w-full h-auto object-cover" loading="lazy"></div>
+            </div>
+            <div class="carousel-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
+              <div class="rounded-xl overflow-hidden shadow-md"><img src="images/18.png" alt="Rinoplastia antes y después - Caso 18" class="w-full h-auto object-cover" loading="lazy"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Dots -->
+        <div id="carouselDots" class="flex items-center justify-center gap-2 mt-6"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ NUESTRAS INSTALACIONES ============ -->
+  <section class="py-16 md:py-24 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <span class="text-xs font-medium tracking-[0.25em] uppercase text-mit-teal">Instalaciones de Primer Nivel</span>
+        <div class="line-accent mx-auto my-4"></div>
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-mit-navy-dark leading-tight">
+          Conoce Nuestro <span class="italic font-light text-mit-navy">Quirófano</span>
+        </h2>
+        <p class="text-slate-400 font-light mt-4 max-w-xl mx-auto">Infraestructura moderna con los más altos estándares de seguridad y tecnología para tu tranquilidad.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4 stagger">
+        <!-- Large featured image -->
+        <div class="reveal col-span-2 row-span-2 relative rounded-2xl overflow-hidden group min-h-[300px] md:min-h-[420px]">
+          <img src="../images/instalaciones/instalaciones-1.jpg" alt="Quirófano principal MIT Medical Tower" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-mit-navy-dark/50 via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 left-4">
+            <span class="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 text-xs font-medium text-mit-navy-dark shadow-lg">Quirófano Equipado</span>
+          </div>
+        </div>
+        <div class="reveal relative rounded-2xl overflow-hidden group min-h-[145px] md:min-h-[205px]">
+          <img src="../images/instalaciones/instalaciones-2.jpg" alt="Sala de recuperación MIT Medical Tower" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-mit-navy-dark/30 via-transparent to-transparent"></div>
+        </div>
+        <div class="reveal relative rounded-2xl overflow-hidden group min-h-[145px] md:min-h-[205px]">
+          <img src="../images/instalaciones/instalaciones-3.jpg" alt="Consultorio MIT Medical Tower" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-mit-navy-dark/30 via-transparent to-transparent"></div>
+        </div>
+        <div class="reveal relative rounded-2xl overflow-hidden group min-h-[145px] md:min-h-[205px]">
+          <img src="../images/instalaciones/instalaciones-4.jpg" alt="Equipo quirúrgico MIT Medical Tower" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-mit-navy-dark/30 via-transparent to-transparent"></div>
+        </div>
+        <div class="reveal relative rounded-2xl overflow-hidden group min-h-[145px] md:min-h-[205px]">
+          <img src="../images/instalaciones/instalaciones-5.jpg" alt="Área de espera MIT Medical Tower" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-mit-navy-dark/30 via-transparent to-transparent"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ GALERIA EQUIPO ============ -->
+  <section class="py-16 md:py-20 bg-slate-50 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10 reveal">
         <span class="text-xs font-medium tracking-[0.25em] uppercase text-mit-teal">Conocenos</span>
         <div class="line-accent mx-auto my-4"></div>
         <h2 class="font-display text-3xl sm:text-4xl font-semibold text-mit-navy-dark leading-tight">
-          Nuestro Equipo y <span class="italic font-light text-mit-navy">Quirofano</span>
+          Nuestro <span class="italic font-light text-mit-navy">Equipo Médico</span>
         </h2>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4 stagger">
@@ -251,7 +385,7 @@
           <div class="absolute inset-0 bg-gradient-to-t from-mit-navy-dark/30 via-transparent to-transparent"></div>
         </div>
         <div class="reveal relative rounded-2xl overflow-hidden group min-h-[145px] md:min-h-[205px]">
-          <img src="../images/instalaciones/instalaciones-4.jpg" alt="Quirofano MIT Medical Tower" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+          <img src="../images/instalaciones/instalaciones-6.jpg" alt="Instalaciones MIT Medical Tower" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
           <div class="absolute inset-0 bg-gradient-to-t from-mit-navy-dark/30 via-transparent to-transparent"></div>
         </div>
         <div class="reveal relative rounded-2xl overflow-hidden group min-h-[145px] md:min-h-[205px]">
@@ -356,7 +490,7 @@
         Rinoplastia<br><span class="italic font-light text-mit-teal-light">$36,999 MXN</span>
       </h2>
       <p class="text-lg text-slate-300 font-light leading-relaxed max-w-xl mx-auto mb-10">
-        Tu mejor perfil con doctores certificados. Agenda tu valoración gratuita y descubre cómo transformar tu nariz de forma natural.
+        Tu mejor perfil con doctores certificados. Agenda tu valoración y descubre cómo transformar tu nariz de forma natural. La valoración tiene costo.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -371,7 +505,7 @@
           Llenar Formulario
         </a>
       </div>
-      <p class="text-slate-400 text-xs mt-6">Cotización gratuita. La mejor relación precio-calidad. WhatsApp: 55 2838 0715</p>
+      <p class="text-slate-400 text-xs mt-6">La valoración tiene costo. La mejor relación precio-calidad. WhatsApp: 55 2838 0715</p>
     </div>
   </section>
 
