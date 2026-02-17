@@ -168,11 +168,10 @@ function handleSubmit(e) {
   const nombre = document.getElementById('formNombre').value.trim();
   const telefono = document.getElementById('formTelefono').value.trim();
   const email = document.getElementById('formEmail').value.trim();
-  const procSelect = document.getElementById('formProcedimiento');
-  const procedimiento = procSelect.options[procSelect.selectedIndex].text;
+  const procedimiento = document.getElementById('formProcedimiento').value;
   const mensaje = document.getElementById('formMensaje').value.trim();
 
-  let texto = 'Hola, me interesa agendar una consulta de Rinoplastia en MIT Medical Tower.\n\n';
+  let texto = 'Hola, me interesa agendar una consulta de Rinoplastia Tradicional en MIT Medical Tower.\n\n';
   texto += '*Nombre:* ' + nombre + '\n';
   texto += '*Teléfono:* ' + telefono + '\n';
   texto += '*Email:* ' + email + '\n';
